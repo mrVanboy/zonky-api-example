@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+* {
+  font-family: "Roboto Slab", serif;
+}
+
+body {
+  background-color: #f6f6f6;
+  text-align: center;
+  line-height: 1.15;
+  font-size: 20pt;
+}
+
+div {
+  margin: 20px 0;
+}
+select, optgroup {
+  background-color: #37b1bf;
+  padding: 8px 20px;
+  color: white;
+  font-size: 16pt;
+}

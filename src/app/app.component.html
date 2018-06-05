@@ -1,0 +1,13 @@
+<h1>Zonky API Example</h1>
+<h2>Average Loan Calculator</h2>
+<div class="filters">
+    <select name="Rating" id="rating-select" (change)="onSelectChange($event.target.value)">
+        <option value="" disabled selected>Select rating</option>
+        <option *ngFor="let rating of ratingArray"
+                [value]="rating.value">
+            {{rating.name}}
+        </option>
+    </select>
+</div>
+<div class="average">{{result}}</div>
+
