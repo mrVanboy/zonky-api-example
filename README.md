@@ -1,27 +1,26 @@
-# ZonkyApiExample
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+# Zonky Api Example
+Example project that using [Zonky API](https://zonky.docs.apiary.io/#).
+> **YOU MUST DISABLE CROSS-ORIGIN SECURITY IN BROWSER**
+> Ex. Chrome must be lauched with parameters: `google-chrome --disable-web-security --user-data-dir`
 
 ## Development server
+You can use classic way of the development with local instance of node or
+here is prepared *Makefile* with dockerized environment.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+make docker-develop
 
-## Code scaffolding
+# Next commands must be runned inside docker container
+cd /app
+npm start -- --host=0.0.0.0
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+After that just open `localhost:400` in your browser.
 
 ## Build
+Resulted image is builded with *docker-compose* and *Makefile* contain
+prepared tasks.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `make up`, wait until container will be prepared and open
+[localhost:8080](http://localhost:8080).
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
