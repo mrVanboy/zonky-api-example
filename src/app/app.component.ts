@@ -31,11 +31,13 @@ export class AppComponent {
         this.result = 'Loading...'
     }
 
+    private static url = 'https://api.zonky.cz/loans/marketplace?fields=id,amount&&rating__eq=';
+
     private loadAllItems(v: string, totalNumber: number) {
         const options = {
             headers: new HttpHeaders().set('X-Size', totalNumber.toString()),
         };
-        this.http.get('https://api.zonky.cz/loans/marketplace?fields=id,amount&&rating__eq=' + v, options).subscribe(res => {
+        this.http.get(AppComponent.url + v, options).subscribe(res => {
             this.calculateAverage(res)
         });
     }
@@ -67,7 +69,7 @@ export class AppComponent {
             headers: new HttpHeaders().set('X-Size', '1'),
             observe: httpObserve,
         };
-        this.http.head('https://api.zonky.cz/loans/marketplace?fields=id,amount&&rating__eq=' + v, options).subscribe(res => {
+        this.http.head(AppComponent.url + v, options).subscribe(res => {
             let sNumber = res.headers.get('X-Total');
             let number = parseInt(sNumber);
             this.loadAllItems(v, number)
