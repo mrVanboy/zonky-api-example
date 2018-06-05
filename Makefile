@@ -23,3 +23,14 @@ docker-develop:  ## Start docker container with development environment
 
 docker-stop: ## Stop docker environment container and remove it
 	@ docker rm $(DEVELOP_CONTAINER_NAME)
+
+up: ## Up docker compose with builded aplication
+	@ docker-compose up
+
+down: ## Down docker-compose containers with app
+	@ docker-compose down
+
+build: ## Build docker-compose images
+	@ docker-compose build
+
+build-up: build up ## Build and up docker-compose containers
